@@ -1,0 +1,331 @@
+* {
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter";
+    color: white;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 20px);
+    background-color: rgb(25, 25, 25);
+    gap: 20px;
+    padding: 50px;
+}
+
+section {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(33, 33, 33);
+    border: 1px solid rgb(67, 67, 67);
+    border-radius: 10px;
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+    
+
+/* width */
+::-webkit-scrollbar {
+    width: 30px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #2f2f2f;
+    border: 10px solid rgb(33, 33, 33);
+    border-radius: 50px;
+}
+
+
+.input-box {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    align-self: center;
+}
+
+.input-box input.coef {
+    background-color: rgb(25, 25, 25);
+    padding: 15px;
+    border-radius: 5px;
+    outline: none;
+    width: 75px;
+    transition-duration: 0.2s;
+    outline: none;
+    outline: rgb(67, 67, 67) 1px;
+}
+
+.input-box input.coef:focus {
+    outline: white 1px solid;
+    outline-offset: 3px;
+}
+.input-box input.coef:hover:not(:focus) {
+    outline: rgb(67, 67, 67) 1px solid;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.graphic-box {
+    padding: 15px;
+    position: relative;
+}
+
+.graphic {
+    background-color: rgb(25, 25, 25);
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.x-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#calcRaizes {
+    display: flex;
+    gap: 100px;
+    align-items: center;
+}
+
+.raizes-box {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+}
+
+.bask {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.fraction {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.fraction::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    background-color: white;
+    height: 1px;
+}
+
+.zoomMsg {
+    opacity: 0;
+    position: absolute;
+    left: 25px;
+    bottom: 25px;
+    background-color: rgb(33, 33, 33);
+    border-radius: 5px;
+    padding: 10px;
+    transition-duration: 0.5s;
+}
+
+.option-box{
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.option-box button{
+    background-color: rgb(33, 33, 33);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.option-box .option{
+    padding: 20px;
+    text-align: start;
+    color: rgb(100, 100, 100);
+    font-size: small;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.option-box .option:hover{
+    background-color: rgb(39, 39, 39);
+}
+
+
+.option-box.active .options{
+    display: flex;
+}
+
+.option-box .options{
+    display: none;
+    background-color: rgb(33, 33, 33);
+    border-radius: 5px;
+    flex-direction: column;
+    width: 250px;
+    overflow: hidden;
+}
+
+#rangeOption{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    gap: 15px;
+}
+
+.range-option label{
+    text-align: left;
+}
+
+.range{
+    -webkit-appearance: none;
+    width: 100%;
+    background: transparent;
+    display: flex;
+    position: relative;
+}
+
+.range::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 10px;
+    background: rgb(26, 26, 26);
+    border-radius: 5px;
+}
+
+.range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    background: rgb(67, 67, 67);
+    border-radius: 50%;
+    cursor: pointer;
+    transform: translateY(-20%);
+}
+
+.toggle-box{
+    position: relative;
+    padding: 2px;
+    background-color: rgb(25, 25, 25);
+    border-radius: 15px;
+    width: 34px;
+    transition-duration: 0.2s;
+}
+
+.toggle-box.active{
+    background-color: rgb(100, 100, 100);
+}
+
+.toggle-box .toggle{
+    display: flex;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: rgb(67, 67, 67);
+    transition-duration: 0.2s;
+}
+.toggle-box.active .toggle{
+    transform: translateX(100%);
+    background-color: rgb(30, 30, 30);
+}
+
+.confGrapghic span{
+    color: rgb(100, 100, 100);
+}
+
+.zoom-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 25px;
+    bottom: 25px;
+    background-color: rgb(33, 33, 33);
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.zoom-box button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: transparent;
+    font-weight: 100;
+    transition-duration: 0.2s;
+}
+
+.zoom-box button:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.zoom-box button span {
+    color: rgb(100, 100, 100);
+}
+
+.accordion-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.accordion {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: rgb(30, 30, 30);
+    width: 100%;
+    border-radius: 10px;
+    transition-duration: .5s;
+}
+
+.accordion.active .accordion-content {
+    display: block;
+}
+
+.accordion .accordion-btn {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    gap: 20px;
+    font-weight: 300;
+    background-color: transparent;
+    text-align: left;
+    padding: 20px;
+}
+
+.accordion.accordion .accordion-btn span {
+    transition-duration: 0.5s;
+}
+
+.accordion.accordion.active .accordion-btn span {
+    transform: rotate(180deg);
+}
+
+.accordion .accordion-content {
+    transition-duration: 0.5s;
+    display: none;
+    padding: 20px;
+    padding-top: 0;
+}
